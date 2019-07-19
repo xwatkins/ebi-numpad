@@ -1,3 +1,4 @@
 export const getPinForCode = code => {
-  return Math.floor(Math.random() * (10 - 1) + 1) + 1;
+  return 2;
+  // return Math.floor(Math.random() * (4 - 2) + 2) + 1;
 };
