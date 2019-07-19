@@ -4,7 +4,7 @@ import NumPad from "./NumPad";
 import Next from "./Next";
 
 export const AppDispatch = React.createContext(null);
-export const baseUrl = "localhost:81";
+export const baseUrl = "http://0.0.0.0:81";
 
 const numpadAppReducer = (state, action) => {
   switch (action.type) {
