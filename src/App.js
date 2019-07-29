@@ -19,7 +19,6 @@ const numpadAppReducer = (state, action) => {
 
 function App() {
   const [store, dispatch] = useReducer(numpadAppReducer, { page: "numpad" });
-  console.log(store);
   return (
     <div className="App">
       <AppDispatch.Provider value={dispatch}>

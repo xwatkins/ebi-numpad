@@ -24,7 +24,9 @@ const NumPad = () => {
   }, [code, dispatch]);
 
   const addNumberToCode = number => {
-    setCode(`${code}${number}`);
+    if (code.length < 6) {
+      setCode(`${code}${number}`);
+    }
   };
 
   const clear = () => {

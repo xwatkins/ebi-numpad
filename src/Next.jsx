@@ -12,9 +12,12 @@ const Next = () => {
 
   return (
     <Fragment>
-      <button type="button" onClick={() => handleClick()}>
-        Next
-      </button>
+      <div>
+        <h2>Please pick up your card</h2>
+        <button type="button" onClick={() => handleClick()}>
+          Next
+        </button>
+      </div>
     </Fragment>
   );
 };
