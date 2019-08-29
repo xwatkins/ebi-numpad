@@ -1,7 +1,18 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
-import { getPinForCode } from "./utils";
 import Axios from "axios";
 import { AppDispatch, baseUrl } from "./App";
+import {
+  setup,
+  getDrawer
+} from "ebi-25th-anniversary-uniprot-ticket-drawer-mapping";
+
+setup({
+  seed: "EBI 25 Anniversary",
+  minDrawer: 1,
+  maxDrawer: 7,
+  minTicket: 10 ** 5,
+  maxTicket: 10 ** 6
+});
 
 const NumPad = () => {
   const [code, setCode] = useState("");
@@ -9,7 +20,7 @@ const NumPad = () => {
 
   useEffect(() => {
     async function handleCode() {
-      const pin = getPinForCode(code);
+      const pin = getDrawer(code);
       try {
         const response = await Axios.get(`${baseUrl}/${pin}/on`);
         console.log(response);
