@@ -9,9 +9,11 @@ export const baseUrl = "http://192.168.4.1:8001";
 const numpadAppReducer = (state, action) => {
   switch (action.type) {
     case "numpad":
-      return { page: "numpad" };
+      return { ...state, page: "numpad" };
     case "next":
-      return { page: "next" };
+      return { ...state, page: "next" };
+    case "pin":
+      return { ...state, pin: action.id };
     default:
       return state;
   }
@@ -22,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <AppDispatch.Provider value={dispatch}>
-        {store.page === "numpad" ? <NumPad /> : <Next />}
+        {store.page === "numpad" ? <NumPad /> : <Next pin={store.pin} />}
       </AppDispatch.Provider>
     </div>
   );

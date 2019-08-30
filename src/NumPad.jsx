@@ -5,6 +5,7 @@ import {
   setup,
   getDrawer
 } from "ebi-25th-anniversary-uniprot-ticket-drawer-mapping";
+import drumRoll from "./sounds/drum_roll_norm.mp3";
 
 setup({
   seed: "EBI 25 Anniversary",
@@ -23,7 +24,7 @@ const NumPad = () => {
       const pin = getDrawer(code);
       try {
         const response = await Axios.get(`${baseUrl}/${pin}/on`);
-        console.log(response);
+        dispatch({ type: "pin", id: response.response.pin });
       } catch (e) {
         console.log(e);
       }
@@ -52,7 +53,13 @@ const NumPad = () => {
 
   return (
     <Fragment>
-      <div className="Code">{code ? code : "Your number"}</div>
+      {code.length >= 6 ? (
+        <div>
+          <audio src={drumRoll} controls autoPlay />
+        </div>
+      ) : (
+        <div className="Code">{code ? code : "Your number"}</div>
+      )}
       <div className="NumPad">
         {Array(3)
           .fill(3)
