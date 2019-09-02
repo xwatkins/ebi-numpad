@@ -24,7 +24,7 @@ const NumPad = () => {
       const pin = getDrawer(code);
       try {
         const response = await Axios.get(`${baseUrl}/${pin}/on`);
-        dispatch({ type: "pin", id: response.response.pin });
+        dispatch({ type: "pin", id: response.data.pin });
       } catch (e) {
         console.log(e);
       }
