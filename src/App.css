@@ -10,3 +10,7 @@
   font-size: 4rem;
   margin-bottom: 1rem;
 }
+
+audio {
+  display: none;
+}

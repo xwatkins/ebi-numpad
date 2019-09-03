@@ -5,6 +5,7 @@ import batmanTheme from "./sounds/batman_theme_short.mp3";
 import sausageTheme from "./sounds/kazoo_edit_norm.mp3";
 import batmanPic from "./batman.png";
 import sausagePic from "./faint_sausage.png";
+import "./NumPad.css";
 
 const Next = ({ pin }) => {
   const dispatch = useContext(AppDispatch);
@@ -17,7 +18,7 @@ const Next = ({ pin }) => {
 
   return (
     <Fragment>
-      <div>
+      <div className={pin === 2 && "two-columns"}>
         {pin === 1 && (
           <div>
             <h1>You are BATMAN</h1>
@@ -30,17 +31,16 @@ const Next = ({ pin }) => {
         {pin === 2 && (
           <div>
             {/* <h1>You are FAINT SAUSAGE</h1> */}
-            <div>
-              <img src={sausagePic} alt="Sausage logo" />
-            </div>
+            <img src={sausagePic} alt="Sausage logo" />
             <audio src={sausageTheme} controls autoPlay />
           </div>
         )}
-        <h2>Please pick up your card</h2>
-
-        <button type="button" onClick={() => handleClick()}>
-          Next
-        </button>
+        <div>
+          <h2>Please pick up your card</h2>
+          <button type="button" onClick={() => handleClick()}>
+            Next
+          </button>
+        </div>
       </div>
     </Fragment>
   );
