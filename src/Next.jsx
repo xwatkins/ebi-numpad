@@ -4,6 +4,7 @@ import Axios from "axios";
 import batmanTheme from "./sounds/batman_theme_short.mp3";
 import sausageTheme from "./sounds/kazoo_edit_norm.mp3";
 import batmanPic from "./batman.png";
+import sausagePic from "./faint_sausage.png";
 
 const Next = ({ pin }) => {
   const dispatch = useContext(AppDispatch);
@@ -28,7 +29,10 @@ const Next = ({ pin }) => {
         )}
         {pin === 2 && (
           <div>
-            <h1>You are FAINT SAUSAGE</h1>
+            {/* <h1>You are FAINT SAUSAGE</h1> */}
+            <div>
+              <img src={sausagePic} alt="Sausage logo" />
+            </div>
             <audio src={sausageTheme} controls autoPlay />
           </div>
         )}
