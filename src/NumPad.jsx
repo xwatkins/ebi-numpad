@@ -10,7 +10,7 @@ import drumRoll from "./sounds/drum_roll_norm.mp3";
 setup({
   seed: "EBI 25 Anniversary",
   minDrawer: 1,
-  maxDrawer: 7,
+  maxDrawer: 12,
   minTicket: 10 ** 5,
   maxTicket: 10 ** 6
 });
