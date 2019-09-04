@@ -18,7 +18,7 @@ const Next = ({ pin }) => {
 
   return (
     <Fragment>
-      <div className={pin === 2 && "two-columns"}>
+      <div className={pin === 1 && "two-columns"}>
         {pin === 2 && (
           <div>
             <h1>You are BATMAN</h1>
