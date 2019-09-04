@@ -19,7 +19,7 @@ const Next = ({ pin }) => {
   return (
     <Fragment>
       <div className={pin === 2 && "two-columns"}>
-        {pin === 1 && (
+        {pin === 2 && (
           <div>
             <h1>You are BATMAN</h1>
             <div>
@@ -28,7 +28,7 @@ const Next = ({ pin }) => {
             <audio src={batmanTheme} controls autoPlay />
           </div>
         )}
-        {pin === 2 && (
+        {pin === 1 && (
           <div>
             {/* <h1>You are FAINT SAUSAGE</h1> */}
             <img src={sausagePic} alt="Sausage logo" />
